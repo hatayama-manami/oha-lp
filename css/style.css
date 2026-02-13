@@ -415,6 +415,21 @@ body {
 .case__item {
   text-align: center;
 }
+.fade-in-up {
+  opacity: 0;
+  -webkit-transform: translateY(24px);
+          transform: translateY(24px);
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, transform 1s;
+  transition: opacity 1s, transform 1s, -webkit-transform 1s;
+}
+.fade-in-up.is-in-view {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
 .news {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -1271,7 +1286,7 @@ body {
 }
 .compare__table td {
   font-size: 14px;
-  letter-spacing: 0.42;
+  letter-spacing: 0.42px;
 }
 .compare__table thead th {
   letter-spacing: 1.6px;
