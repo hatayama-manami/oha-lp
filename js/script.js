@@ -77,4 +77,19 @@ $(function () {
       "swing", //swing or linear
     );
   });
+
+  const intersectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-in-view");
+      } else {
+        entry.target.classList.remove("is-in-view");//何回も付け外ししたいときは書く。
+      }
+    });
+  });
+
+  const inViewItems = document.querySelectorAll(".js-in-view");
+  inViewItems.forEach(function (inViewItem) {
+    intersectionObserver.observe(inViewItem);
+  });
 });
